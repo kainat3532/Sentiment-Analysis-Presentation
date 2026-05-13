@@ -401,7 +401,7 @@
                 <p class="reveal d-1"
                     style="color: var(--secondary); font-weight: 800; letter-spacing: 0.2em; margin-bottom: 1rem;">FINAL
                     ML PROJECT</p>
-                <h1 class="reveal d-2">Sentiment Analysis of<br>Twitter Data</h1>
+                <h1 class="reveal d-2">Sentiment Analysis of<br>Twitter(X) Data</h1>
                 <p class="reveal d-3" style="font-size: 1.8rem; color: var(--text-dim); font-weight: 300;">Using Machine
                     Learning to Decode Social Emotions</p>
                 <div class="reveal d-3" style="margin-top: 4rem; display: flex; justify-content: center; gap: 4rem;">
@@ -429,7 +429,7 @@
                         <h3 style="color: var(--primary); margin-bottom: 1.5rem;">What is it?</h3>
                         <p style="font-size: 1.4rem; line-height: 1.6; color: var(--text-dim);">
                             Think of it as a <strong style="color: #fff;">Digital Mood Ring</strong>. It uses math to
-                            read thousands of posts and tell if people are happy, angry, or just factual.
+                            read thousands of Twitter(X) posts and tell if people are happy, angry, or just factual.
                         </p>
                     </div>
                     <div class="reveal d-3">
@@ -450,7 +450,7 @@
                     <h2>The Problem</h2>
                 </div>
                 <p class="reveal d-1" style="font-size: 1.5rem; text-align: center; margin-bottom: 3rem;">Why can't
-                    computers just read tweets easily?</p>
+                    computers just read Twitter(X) posts easily?</p>
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
                     <div class="step-node reveal d-1"><span>01</span>
                         <p>Short Length</p>
@@ -463,7 +463,7 @@
                     </div>
                 </div>
                 <p class="reveal d-3"
-                    style="margin-top: 3rem; text-align: center; color: var(--accent); font-weight: 700;">Twitter
+                    style="margin-top: 3rem; text-align: center; color: var(--accent); font-weight: 700;">Twitter(X)
                     language is "Noisy" and informal.</p>
             </div>
         </div>
@@ -476,7 +476,7 @@
                 </div>
                 <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem;">
                     <ul class="bullet-list reveal d-1">
-                        <li>Train an AI model to read tweets.</li>
+                        <li>Train an AI model to read Twitter(X) posts.</li>
                         <li>Beat existing research benchmarks.</li>
                         <li>Find where the AI gets "Biased."</li>
                     </ul>
@@ -496,17 +496,19 @@
                     <h2>Research Foundation</h2>
                 </div>
                 <p style="text-align: center; color: var(--secondary); font-size: 1.2rem; margin-bottom: 2rem;">"Like It
-                    or Not: A Survey of Twitter Sentiment Analysis Methods"</p>
+                    or Not: A Survey of Twitter(X) Sentiment Analysis Methods"</p>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                     <div class="reveal d-1"
                         style="padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 20px;">
-                        <h3 style="margin-bottom: 1rem;">Old School (2009)</h3>
-                        <p style="color: var(--text-dim);">Used basic Naive Bayes. Accuracy was around 82%.</p>
+                        <h3 style="margin-bottom: 1rem;">Manual Era</h3>
+                        <p style="color: var(--text-dim);">Early methods used simple dictionaries and manual rules.
+                            These struggled with sarcasm and evolving slang.</p>
                     </div>
                     <div class="reveal d-2"
                         style="padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 20px;">
-                        <h3 style="margin-bottom: 1rem;">New Era (2024+)</h3>
-                        <p style="color: var(--text-dim);">Moving toward Transformers (BERT) and Deep Context.</p>
+                        <h3 style="margin-bottom: 1rem;">Statistical Era</h3>
+                        <p style="color: var(--text-dim);">The shift to supervised learning (our project) allows models
+                            to learn patterns directly from large datasets.</p>
                     </div>
                 </div>
             </div>
@@ -564,7 +566,7 @@
                     <h2>The Data (74,000+ Tweets)</h2>
                 </div>
                 <div class="reveal d-1" style="margin-bottom: 2rem;">
-                    <p style="color: var(--text-dim);">We used the <strong>Twitter Entity Sentiment</strong> dataset
+                    <p style="color: var(--text-dim);">We used the <strong>Twitter(X) Entity Sentiment</strong> dataset
                         (Kaggle).</p>
                 </div>
                 <table class="reveal d-2" style="width: 100%; border-collapse: collapse;">
@@ -585,8 +587,37 @@
             </div>
         </div>
 
-        <!-- Slide 7: Pipeline -->
+        <!-- Slide 7: Data Preprocessing -->
         <div class="slide" id="slide-7">
+            <div class="glass-card">
+                <div class="slide-header">
+                    <h2>Data Preprocessing</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                    <div class="reveal d-1">
+                        <h3 style="color: var(--primary); margin-bottom: 1.5rem;">Cleaning the Noise</h3>
+                        <ul class="bullet-list" style="font-size: 1.1rem;">
+                            <li><strong>Noise Removal:</strong> Stripping URLs, HTML tags, and @mentions.</li>
+                            <li><strong>Normalization:</strong> Converting all text to lowercase for consistency.</li>
+                            <li><strong>Tokenization:</strong> Splitting sentences into individual word tokens.</li>
+                        </ul>
+                    </div>
+                    <div class="reveal d-2"
+                        style="background: rgba(0,0,0,0.4); padding: 2rem; border-radius: 20px; border: 1px solid var(--secondary);">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--secondary);">Before vs. After
+                        </h3>
+                        <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 0.5rem;">Raw Post:</p>
+                        <p style="font-family: monospace; color: var(--accent); margin-bottom: 1rem;">"Check out our NEW
+                            game! http://bit.ly/game #gaming @user1"</p>
+                        <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 0.5rem;">Cleaned Data:</p>
+                        <p style="font-family: monospace; color: var(--success);">"check out our new game gaming"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Pipeline -->
+        <div class="slide" id="slide-8">
             <div class="glass-card">
                 <div class="slide-header">
                     <h2>ML Pipeline</h2>
@@ -611,8 +642,35 @@
             </div>
         </div>
 
-        <!-- Slide 8: Models Used -->
-        <div class="slide" id="slide-8">
+        <!-- Slide 9: Task Definition -->
+        <div class="slide" id="slide-9">
+            <div class="glass-card">
+                <div class="slide-header">
+                    <h2>Task Definition</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="reveal d-1"
+                        style="padding: 2.5rem; background: rgba(99, 102, 241, 0.1); border-left: 5px solid var(--primary); border-radius: 20px;">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">1. Binary Mode</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-dim); line-height: 1.6;">
+                            Focused on **Positive vs. Negative** only. We used this to directly compare our results with
+                            the 82.7% research benchmark.
+                        </p>
+                    </div>
+                    <div class="reveal d-2"
+                        style="padding: 2.5rem; background: rgba(139, 92, 246, 0.1); border-left: 5px solid var(--secondary); border-radius: 20px;">
+                        <h3 style="color: var(--secondary); margin-bottom: 1rem;">2. Multi-Class Mode</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-dim); line-height: 1.6;">
+                            A more complex **4-Class** task (Pos, Neg, Neutral, Irrelevant). This represents a more
+                            realistic social media environment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Models Used -->
+        <div class="slide" id="slide-10">
             <div class="glass-card">
                 <div class="slide-header">
                     <h2>Algorithms Tested</h2>
@@ -634,8 +692,8 @@
             </div>
         </div>
 
-        <!-- Slide 9: Visual Results -->
-        <div class="slide" id="slide-9">
+        <!-- Slide 11: Visual Results -->
+        <div class="slide" id="slide-11">
             <div class="glass-card">
                 <div class="slide-header">
                     <h2>Visual Performance</h2>
@@ -653,8 +711,8 @@
             </div>
         </div>
 
-        <!-- Slide 10: Bias Analysis -->
-        <div class="slide" id="slide-10">
+        <!-- Slide 12: Bias Analysis -->
+        <div class="slide" id="slide-12">
             <div class="glass-card">
                 <div class="slide-header">
                     <h2>Bias Analysis</h2>
@@ -670,17 +728,9 @@
             </div>
         </div>
 
-        <!-- Slide 11: Future -->
-        <div class="slide" id="slide-11">
+        <!-- Slide 13: Future -->
+        <div class="slide" id="slide-13">
             <div class="glass-card" style="text-align: center;">
-                <h2 class="reveal d-1">Future Horizons</h2>
-                <p class="reveal d-2" style="font-size: 1.4rem; color: var(--text-dim); margin-top: 2rem;">Scaling the
-                    Project Further</p>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem;">
-                    <div class="step-node reveal d-1" style="border-color: var(--accent);">Real-Time Stream</div>
-                    <div class="step-node reveal d-2" style="border-color: var(--secondary);">Aspect Analysis</div>
-                    <div class="step-node reveal d-3" style="border-color: var(--success);">Human Feedback</div>
-                </div>
                 <p class="reveal d-3"
                     style="margin-top: 4rem; font-size: 3rem; font-weight: 900; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                     THANK YOU!</p>
